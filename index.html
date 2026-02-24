@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soam Parkash | Data Science Portfolio</title>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body class="dark">
+    <!-- Data Particles Animation -->
+    <div class="data-particle" style="top: 10%; left: 5%; width: 50px; height: 50px; animation-delay: 0s;"></div>
+    <div class="data-particle" style="top: 30%; right: 8%; width: 30px; height: 30px; animation-delay: 2s;"></div>
+    <div class="data-particle" style="bottom: 20%; left: 15%; width: 40px; height: 40px; animation-delay: 4s;"></div>
+    <div class="data-particle" style="bottom: 40%; right: 20%; width: 60px; height: 60px; animation-delay: 6s;"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 glass-card z-50 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#home" class="text-xl font-bold gradient-text code-font">SP &lt;/&gt;</a>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-purple-400 transition nav-active">Home</a>
+                <a href="#about" class="hover:text-purple-400 transition">About</a>
+                <a href="#skills" class="hover:text-purple-400 transition">Skills</a>
+                <a href="#projects" class="hover:text-purple-400 transition">Projects</a>
+                <a href="#certifications" class="hover:text-purple-400 transition">Certifications</a>
+                <a href="#education" class="hover:text-purple-400 transition">Education</a>
+                <a href="#training" class="hover:text-purple-400 transition">Training</a>
+                <a href="#contact" class="hover:text-purple-400 transition">Contact</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <!-- Theme Toggle Button -->
+                <button id="themeToggle" class="theme-toggle-btn animate-theme-switch">
+                    <i class="fas fa-moon icon" id="themeIcon"></i>
+                </button>
+                <a href="#resume" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg font-medium transition hidden md:block">
+                    Resume
+                </a>
+                <button id="mobileMenu" class="md:hidden w-10 h-10 rounded-full glass-card flex items-center justify-center">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileNav" class="md:hidden mt-4 hidden">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="py-2 px-4 rounded-lg glass-card nav-active">Home</a>
+                <a href="#about" class="py-2 px-4 rounded-lg glass-card">About</a>
+                <a href="#skills" class="py-2 px-4 rounded-lg glass-card">Skills</a>
+                <a href="#projects" class="py-2 px-4 rounded-lg glass-card">Projects</a>
+                <a href="#certifications" class="py-2 px-4 rounded-lg glass-card">Certifications</a>
+                <a href="#education" class="py-2 px-4 rounded-lg glass-card">Education</a>
+                <a href="#training" class="py-2 px-4 rounded-lg glass-card">Training</a>
+                <a href="#contact" class="py-2 px-4 rounded-lg glass-card">Contact</a>
+                <a href="#resume" class="py-2 px-4 rounded-lg bg-purple-600 text-center">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-20">
+        <!-- Home/Hero Section -->
+        <section id="home" class="min-h-screen flex items-center py-20 px-6 section-hidden">
+            <div class="max-w-7xl mx-auto w-full">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="animate-slide-up">
+                        <div class="text-5xl md:text-7xl font-bold mb-6">
+                            <span class="gradient-text">Soam</span>
+                            <span class="gradient-text">Parkash</span>
+                        </div>
+                        <h2 class="text-xl md:text-2xl text-slate-300 dark:text-slate-700 mb-4 code-font">
+                            &lt;Aspiring Data Science Engineer /&gt;
+                        </h2>
+                        <p class="text-lg mb-8 text-slate-400 dark:text-slate-600 italic">
+                            "Transforming raw data into actionable insights. Building intelligent solutions through machine learning and analytics."
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-3 mb-10">
+                            <span class="px-4 py-2 glass-card rounded-full text-sm">Python</span>
+                            <span class="px-4 py-2 glass-card rounded-full text-sm">SQL</span>
+                            <span class="px-4 py-2 glass-card rounded-full text-sm">Power BI</span>
+                            <span class="px-4 py-2 glass-card rounded-full text-sm">Machine Learning</span>
+                            <span class="px-4 py-2 glass-card rounded-full text-sm">Data Analysis</span>
+                            <span class="px-4 py-2 glass-card rounded-full text-sm">Excel</span>
+                            <span class="px-4 py-2 glass-card rounded-full text-sm">C++</span>
+                            <span class="px-4 py-2 glass-card rounded-full text-sm">HTML/CSS</span>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#projects" class="px-6 py-3 bg-data-gradient rounded-lg font-semibold ripple animate-pulse-glow">
+                                View My Projects
+                            </a>
+                            <a href="#contact" class="px-6 py-3 glass-card border border-purple-500 rounded-lg font-semibold ripple">
+                                Contact Me
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-center animate-fade-in">
+                        <div class="relative">
+                            <!-- Profile Picture Placeholder with Initials -->
+                            <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-purple-500/30 shadow-2xl shadow-purple-500/20">
+                                <div class="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                                    <span class="text-white text-8xl font-bold">SP</span>
+                                </div>
+                            </div>
+                            <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-purple-500/20 rounded-full flex items-center justify-center glass-card">
+                                <i class="fas fa-chart-line text-purple-400 text-3xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 px-6 section-hidden">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold mb-12 text-center">
+                    <span class="gradient-text">About Me</span>
+                    <div class="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mt-2 rounded-full"></div>
+                </h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- About Summary -->
+                    <div class="glass-card p-8 rounded-2xl md:col-span-2">
+                        <h3 class="text-2xl font-bold mb-6 gradient-text">Data-Driven Problem Solver</h3>
+                        <p class="mb-4 text-slate-300 dark:text-slate-700">
+                            As a passionate Computer Science Engineering student and aspiring Data Science Engineer, I focus on extracting meaningful insights from complex datasets and building predictive models that drive business decisions. My approach combines analytical thinking with technical expertise in machine learning and data visualization.
+                        </p>
+                        <p class="mb-4 text-slate-300 dark:text-slate-700">
+                            I believe in the power of data to transform industries and solve real-world problems. Whether it's analyzing emergency call patterns, predicting traffic accidents, or building intelligent chatbots, I strive to create solutions that are both innovative and impactful.
+                        </p>
+                        <p class="text-slate-300 dark:text-slate-700">
+                            Currently expanding my skills in machine learning algorithms, deep learning, and big data technologies while maintaining strong foundations in statistics, programming, and data visualization.
+                        </p>
+                    </div>
+                    
+                    <!-- Quick Facts -->
+                    <div class="space-y-8">
+                        <div class="glass-card p-6 rounded-2xl">
+                            <h3 class="text-xl font-bold mb-4 gradient-text">Data Science Focus</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <i class="fas fa-chart-bar text-purple-400 mr-3"></i>
+                                    <span>Exploratory Data Analysis</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-robot text-purple-400 mr-3"></i>
+                                    <span>Machine Learning</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-chart-pie text-purple-400 mr-3"></i>
+                                    <span>Data Visualization</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-database text-purple-400 mr-3"></i>
+                                    <span>Big Data Analytics</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-code text-purple-400 mr-3"></i>
+                                    <span>Python Programming</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="glass-card p-6 rounded-2xl">
+                            <h3 class="text-xl font-bold mb-4 gradient-text">Beyond Data</h3>
+                            <p class="text-slate-300 dark:text-slate-700">
+                                When I'm not analyzing data or building models, you can find me participating in hackathons, contributing to open-source data science projects, or learning about emerging AI technologies. I'm passionate about continuous learning and staying updated with the latest trends in data science and machine learning.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 px-6 bg-slate-900/30 dark:bg-slate-100/30 section-hidden">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold mb-12 text-center">
+                    <span class="gradient-text">Technical Arsenal</span>
+                    <div class="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mt-2 rounded-full"></div>
+                </h2>
+                
+                <!-- Skill Tabs -->
+                <div class="flex flex-wrap justify-center gap-2 mb-12" id="skillTabs">
+                    <button class="tab-active px-6 py-2 rounded-full transition" data-filter="all">All</button>
+                    <button class="px-6 py-2 glass-card rounded-full transition" data-filter="languages">Languages</button>
+                    <button class="px-6 py-2 glass-card rounded-full transition" data-filter="data">Data Science</button>
+                    <button class="px-6 py-2 glass-card rounded-full transition" data-filter="tools">Tools</button>
+                    <button class="px-6 py-2 glass-card rounded-full transition" data-filter="soft">Soft Skills</button>
+                </div>
+                
+                <!-- Skills Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="skillsGrid">
+                    <!-- Languages -->
+                    <div class="skill-card glass-card p-6 rounded-2xl hover:gradient-border transition group" data-category="languages">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center mr-4 group-hover:bg-blue-500/30 transition">
+                                <i class="fab fa-python text-blue-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Python</h3>
+                                <div class="skill-progress mt-2">
+                                    <div class="progress-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="skill-description">
+                            NumPy, Pandas, Scikit-learn, Matplotlib, Seaborn for data analysis and machine learning.
+                        </p>
+                    </div>
+                    
+                    <div class="skill-card glass-card p-6 rounded-2xl hover:gradient-border transition group" data-category="languages">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-blue-600/20 flex items-center justify-center mr-4 group-hover:bg-blue-600/30 transition">
+                                <i class="fas fa-database text-blue-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">SQL</h3>
+                                <div class="skill-progress mt-2">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="skill-description">
+                            MySQL, complex queries, joins, subqueries, and database management.
+                        </p>
+                    </div>
+                    
+                    <div class="skill-card glass-card p-6 rounded-2xl hover:gradient-border transition group" data-category="languages">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-purple-500/20 flex items-center justify-center mr-4 group-hover:bg-purple-500/30 transition">
+                                <i class="fas fa-code text-purple-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">C/C++</h3>
+                                <div class="skill-progress mt-2">
+                                    <div class="progress-fill" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="skill-description">
+                            Object-oriented programming, data structures, algorithms, and competitive programming.
+                        </p>
+                    </div>
+                    
+                    <div class="skill-card glass-card p-6 rounded-2xl hover:gradient-border transition group" data-category="languages">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-orange-500/20 flex items-center justify-center mr-4 group-hover:bg-orange-500/30 transition">
+                                <i class="fab fa-html5 text-orange-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">HTML/CSS</h3>
+                                <div class="skill-progress mt-2">
+                                    <div class="progress-fill" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="skill-description">
+                            Responsive web design, modern CSS frameworks, and frontend development.
+                        </p>
+                    </div>
+                    
+                    <!-- Data Science Skills -->
+                    <div class="skill-card glass-card p-6 rounded-2xl hover:gradient-border transition group" data-category="data">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-purple-500/20 flex items-center justify-center mr-4 group-hover:bg-purple-500/30 transition">
+                                <i class="fas fa-chart-line text-purple-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Data Analysis</h3>
+                                <div class="skill-progress mt-2">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="skill-description">
+                            Exploratory Data Analysis, feature engineering, statistical analysis, and hypothesis testing.
+                        </p>
+                    </div>
+                    
+                    <div class="skill-card glass-card p-6 rounded-2xl hover:gradient-border transition group" data-category="data">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-purple-600/20 flex items-center justify-center mr-4 group-hover:bg-purple-600/30 transition">
+                                <i class="fas fa-robot text-purple-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Machine Learning</h3>
+                                <div class="skill-progress mt-2">
+                                    <div class="progress-fill" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="skill-description">
+                            Regression, classification, clustering, ensemble methods, and model evaluation.
+                        </p>
+                    </div>
+                    
+                    <div class="skill-card glass-card p-6 rounded-2xl hover:gradient-border transition group" data-category="data">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center mr-4 group-hover:bg-blue-500/30 transition">
+                                <i class="fas fa-chart-bar text-blue-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Data Visualization</h3>
+                                <div class="skill-progress mt-2">
+                                    <div class="progress-fill" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="skill-description">
+                            Power BI, Matplotlib, Seaborn, Plotly, and interactive dashboard creation.
+                        </p>
+                    </div>
+                    
+                    <!-- Tools -->
+                    <div class="skill-card glass-card p-6 rounded-2xl hover:gradient-border transition group" data-category="tools">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-green-500/20 flex items-center justify-center mr-4 group-hover:bg-green-500/30 transition">
+                                <i class="fas fa-file-excel text-green-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Microsoft Excel</h3>
+                                <div class="skill-progress mt-2">
+                                    <div class="progress-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="skill-description">
+                            Pivot Tables, VLOOKUP, Power Query, charts, and advanced formulas.
+                        </p>
+                    </div>
+                    
+                    <div class="skill-card glass-card p-6 rounded-2xl hover:gradient-border transition group" data-category="tools">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-yellow-500/20 flex items-center justify-center mr-4 group-hover:bg-yellow-500/30 transition">
+                                <i class="fas fa-chart-pie text-yellow-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Power BI</h3>
+                                <div class="skill-progress mt-2">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="skill-description">
+                            DAX, data modeling, interactive dashboards, and report publishing.
+                        </p>
+                    </div>
+                    
+                    <div class="skill-card glass-card p-6 rounded-2xl hover:gradient-border transition group" data-category="tools">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-gray-500/20 flex items-center justify-center mr-4 group-hover:bg-gray-500/30 transition">
+                                <i class="fab fa-github text-gray-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Git/GitHub</h3>
+                                <div class="skill-progress mt-2">
+                                    <div class="progress-fill" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="skill-description">
+                            Version control, collaborative development, and project management.
+                        </p>
+                    </div>
+                    
+                    <!-- Soft Skills -->
+                    <div class="skill-card glass-card p-6 rounded-2xl hover:gradient-border transition group" data-category="soft">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-purple-400/20 flex items-center justify-center mr-4 group-hover:bg-purple-400/30 transition">
+                                <i class="fas fa-lightbulb text-purple-300 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Problem-Solving</h3>
+                                <div class="skill-progress mt-2">
+                                    <div class="progress-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="skill-description">
+                            Analytical thinking, critical reasoning, and creative solution development.
+                        </p>
+                    </div>
+                    
+                    <div class="skill-card glass-card p-6 rounded-2xl hover:gradient-border transition group" data-category="soft">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-blue-400/20 flex items-center justify-center mr-4 group-hover:bg-blue-400/30 transition">
+                                <i class="fas fa-users text-blue-300 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Team Player</h3>
+                                <div class="skill-progress mt-2">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="skill-description">
+                            Collaboration, communication, and cross-functional teamwork.
+                        </p>
+                    </div>
+                    
+                    <div class="skill-card glass-card p-6 rounded-2xl hover:gradient-border transition group" data-category="soft">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-green-400/20 flex items-center justify-center mr-4 group-hover:bg-green-400/30 transition">
+                                <i class="fas fa-sync-alt text-green-300 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Adaptability</h3>
+                                <div class="skill-progress mt-2">
+                                    <div class="progress-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="skill-description">
+                            Quick learner, flexible, and comfortable with emerging technologies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 px-6 section-hidden">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold mb-12 text-center">
+                    <span class="gradient-text">Data Science Projects</span>
+                    <div class="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mt-2 rounded-full"></div>
+                </h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 911 Emergency Call Analysis -->
+                    <div class="glass-card rounded-2xl overflow-hidden hover:gradient-border transition group">
+                        <div class="h-48 bg-gradient-to-br from-red-600 to-purple-600 flex items-center justify-center">
+                            <i class="fas fa-phone-alt text-white text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">911 Emergency Call Analysis</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-purple-500/20 rounded-full text-xs">Python</span>
+                                <span class="px-3 py-1 bg-purple-500/20 rounded-full text-xs">Pandas</span>
+                                <span class="px-3 py-1 bg-purple-500/20 rounded-full text-xs">Power BI</span>
+                                <span class="px-3 py-1 bg-purple-500/20 rounded-full text-xs">Data Viz</span>
+                            </div>
+                            <p class="text-slate-300 dark:text-slate-700 mb-6">
+                                Cleaned and processed 911 emergency call data using Python, resolving missing values and identifying key trends by call type, location, time, and priority. Built interactive Power BI dashboards with maps and filters.
+                            </p>
+                            <div class="flex gap-4">
+                                <a href="https://github.com/soamparkash/911-Call-Analysis" target="_blank" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg text-sm font-medium transition ripple">
+                                    <i class="fab fa-github mr-2"></i> Source Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Traffic Crash Analysis Dashboard -->
+                    <div class="glass-card rounded-2xl overflow-hidden hover:gradient-border transition group">
+                        <div class="h-48 bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
+                            <i class="fas fa-car-crash text-white text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Traffic Crash Analysis</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-blue-500/20 rounded-full text-xs">MS Excel</span>
+                                <span class="px-3 py-1 bg-blue-500/20 rounded-full text-xs">Pivot Tables</span>
+                                <span class="px-3 py-1 bg-blue-500/20 rounded-full text-xs">Data Viz</span>
+                                <span class="px-3 py-1 bg-blue-500/20 rounded-full text-xs">Analysis</span>
+                            </div>
+                            <p class="text-slate-300 dark:text-slate-700 mb-6">
+                                Analyzed 7 years of accident data to identify high-risk locations, peak timings, and key contributing factors. Built an interactive Excel dashboard using Pivot Tables, slicers, and charts for safety planning insights.
+                            </p>
+                            <div class="flex gap-4">
+                                <a href="https://github.com/soamparkash/Traffic-Crash-Report-US-2015-2022-" target="_blank" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-sm font-medium transition ripple">
+                                    <i class="fab fa-github mr-2"></i> Source Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- TECH-BOT -->
+                    <div class="glass-card rounded-2xl overflow-hidden hover:gradient-border transition group">
+                        <div class="h-48 bg-gradient-to-br from-green-600 to-purple-600 flex items-center justify-center">
+                            <i class="fas fa-robot text-white text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">TECH-BOT</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-green-500/20 rounded-full text-xs">Python</span>
+                                <span class="px-3 py-1 bg-green-500/20 rounded-full text-xs">HTML/CSS</span>
+                                <span class="px-3 py-1 bg-green-500/20 rounded-full text-xs">JavaScript</span>
+                                <span class="px-3 py-1 bg-green-500/20 rounded-full text-xs">Chatbot</span>
+                            </div>
+                            <p class="text-slate-300 dark:text-slate-700 mb-6">
+                                Designed and developed a functional chatbot with Python logic integrated into a clean, interactive web interface. Enhanced user experience and deployment readiness with modular code on GitHub.
+                            </p>
+                            <div class="flex gap-4">
+                                <a href="https://github.com/soamparkash/TECH-BOT.git" target="_blank" class="px-4 py-2 bg-green-600 hover:bg-green-700 rounded-lg text-sm font-medium transition ripple">
+                                    <i class="fab fa-github mr-2"></i> Source Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Training Section -->
+        <section id="training" class="py-20 px-6 bg-slate-900/30 dark:bg-slate-100/30 section-hidden">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold mb-4 text-center">
+                    <span class="gradient-text">Professional Training</span>
+                </h2>
+                <p class="text-xl text-slate-600 dark:text-slate-300 text-center mb-12">
+                    "Data to Decision - Centre For Professional Enhancement, LPU"
+                </p>
+                <div class="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mt-2 mb-12 rounded-full"></div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="glass-card p-8 rounded-2xl">
+                        <div class="flex items-start gap-4">
+                            <div class="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-chart-line text-purple-400 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2 gradient-text">Data to Decision</h3>
+                                <p class="text-purple-400 mb-2">Jun' 25 – Jul' 25 | Certificate</p>
+                                <ul class="space-y-3 text-slate-300 dark:text-slate-700">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-purple-400 mt-1 mr-2"></i>
+                                        <span>Performed Exploratory Data Analysis using NumPy and Pandas, reducing data preprocessing time by 20%</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-purple-400 mt-1 mr-2"></i>
+                                        <span>Applied feature engineering to boost model performance by 25%</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-purple-400 mt-1 mr-2"></i>
+                                        <span>Built and evaluated ML models (Linear Regression, KNN, SVM, Decision Trees, K-Means, Ensemble Methods) using Scikit-learn with 15% accuracy improvement</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-purple-400 mt-1 mr-2"></i>
+                                        <span>Gained practical experience in Excel, Power BI, and MySQL for data analysis and dashboard creation</span>
+                                    </li>
+                                </ul>
+                                <a href="https://drive.google.com/file/d/18hqTi27NuChm4pDCL74PVeQWiX5-yMRJ/view" target="_blank" class="inline-block mt-6 px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-semibold transition ripple">
+                                    <i class="fas fa-external-link-alt mr-2"></i> View Certificate
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card p-8 rounded-2xl">
+                        <div class="flex items-start gap-4">
+                            <div class="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-code text-purple-400 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-4 gradient-text">Skills & Achievements</h3>
+                                <div class="space-y-4">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-trophy text-yellow-500 mr-3"></i>
+                                        <span class="text-slate-300 dark:text-slate-700">Data preprocessing efficiency improved by 20%</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-chart-line text-green-500 mr-3"></i>
+                                        <span class="text-slate-300 dark:text-slate-700">Model accuracy boosted by 15% through optimization</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-robot text-purple-500 mr-3"></i>
+                                        <span class="text-slate-300 dark:text-slate-700">6+ ML algorithms implemented and evaluated</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-dashboard text-blue-500 mr-3"></i>
+                                        <span class="text-slate-300 dark:text-slate-700">3+ interactive dashboards created in Power BI</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="py-20 px-6 section-hidden">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold mb-4 text-center">
+                    <span class="gradient-text">Certifications</span>
+                </h2>
+                <p class="text-xl text-slate-600 dark:text-slate-300 text-center mb-12">
+                    "Professional credentials validating my data science journey"
+                </p>
+                <div class="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mt-2 mb-12 rounded-full"></div>
+                
+                <!-- Certifications Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Social Networks | NPTEL -->
+                    <div class="certificate-card glass-card rounded-2xl p-6 hover:gradient-border transition-all duration-300 hover:scale-[1.02] group">
+                        <div class="mb-6 rounded-xl overflow-hidden border border-slate-700 dark:border-slate-300">
+                            <iframe
+                                src="https://drive.google.com/file/d/1VeeFWam7bqmLQsDtWzxhDpyTUv4AhCEn/preview"
+                                title="Social Networks NPTEL Certificate"
+                                class="w-full h-64 certificate-iframe"
+                                loading="lazy"
+                                allow="autoplay"
+                            ></iframe>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-100 group-hover:text-purple-400 transition-colors">
+                            Social Networks | NPTEL
+                        </h3>
+                        <a
+                            href="https://drive.google.com/file/d/1VeeFWam7bqmLQsDtWzxhDpyTUv4AhCEn/view"
+                            target="_blank"
+                            class="inline-block w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-lg text-center transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-purple-500/30 ripple"
+                        >
+                            View Certificate
+                        </a>
+                    </div>
+                    
+                    <!-- Data Analytics Job Simulation | Forage -->
+                    <div class="certificate-card glass-card rounded-2xl p-6 hover:gradient-border transition-all duration-300 hover:scale-[1.02] group">
+                        <div class="mb-6 rounded-xl overflow-hidden border border-slate-700 dark:border-slate-300">
+                            <iframe
+                                src="https://drive.google.com/file/d/1r8Xv_uFaLhNxZnxLdX44Zzps6wj6HNDP/preview"
+                                title="Data Analytics Job Simulation Certificate"
+                                class="w-full h-64 certificate-iframe"
+                                loading="lazy"
+                                allow="autoplay"
+                            ></iframe>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-100 group-hover:text-purple-400 transition-colors">
+                            Data Analytics Job Simulation | Forage
+                        </h3>
+                        <a
+                            href="https://drive.google.com/file/d/1r8Xv_uFaLhNxZnxLdX44Zzps6wj6HNDP/view"
+                            target="_blank"
+                            class="inline-block w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-lg text-center transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-purple-500/30 ripple"
+                        >
+                            View Certificate
+                        </a>
+                    </div>
+                    
+                    <!-- Master Generative AI | Udemy -->
+                    <div class="certificate-card glass-card rounded-2xl p-6 hover:gradient-border transition-all duration-300 hover:scale-[1.02] group">
+                        <div class="mb-6 rounded-xl overflow-hidden border border-slate-700 dark:border-slate-300">
+                            <iframe
+                                src="https://drive.google.com/file/d/1m-pSqnhv5j_cVqTZZC4xW6FmW1FZ2l2-/preview"
+                                title="Master Generative AI Certificate"
+                                class="w-full h-64 certificate-iframe"
+                                loading="lazy"
+                                allow="autoplay"
+                            ></iframe>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-100 group-hover:text-purple-400 transition-colors">
+                            Master Generative AI | Udemy
+                        </h3>
+                        <a
+                            href="https://drive.google.com/file/d/1m-pSqnhv5j_cVqTZZC4xW6FmW1FZ2l2-/view"
+                            target="_blank"
+                            class="inline-block w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-lg text-center transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-purple-500/30 ripple"
+                        >
+                            View Certificate
+                        </a>
+                    </div>
+                    
+                    <!-- Introduction to Hardware and Operating Systems | Udemy -->
+                    <div class="certificate-card glass-card rounded-2xl p-6 hover:gradient-border transition-all duration-300 hover:scale-[1.02] group">
+                        <div class="mb-6 rounded-xl overflow-hidden border border-slate-700 dark:border-slate-300">
+                            <iframe
+                                src="https://drive.google.com/file/d/1T2h263lCmGBq2Dg3rEi2UUQO_Vgf61Qu/preview"
+                                title="Hardware and OS Certificate"
+                                class="w-full h-64 certificate-iframe"
+                                loading="lazy"
+                                allow="autoplay"
+                            ></iframe>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-100 group-hover:text-purple-400 transition-colors">
+                            Introduction to Hardware and OS | Udemy
+                        </h3>
+                        <a
+                            href="https://drive.google.com/file/d/1T2h263lCmGBq2Dg3rEi2UUQO_Vgf61Qu/view"
+                            target="_blank"
+                            class="inline-block w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-lg text-center transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-purple-500/30 ripple"
+                        >
+                            View Certificate
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Note about Google Drive -->
+                <div class="mt-12 text-center text-slate-500 dark:text-slate-400 text-sm">
+                    <p>
+                        Certificates are hosted on Google Drive. If previews don't load, ensure you're signed into a Google account.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-20 px-6 bg-slate-900/30 dark:bg-slate-100/30 section-hidden">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold mb-12 text-center">
+                    <span class="gradient-text">Education Timeline</span>
+                    <div class="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mt-2 rounded-full"></div>
+                </h2>
+                
+                <div class="relative">
+                    <!-- Timeline Line -->
+                    <div class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-500 to-purple-600"></div>
+                    
+                    <!-- Timeline Items -->
+                    <div class="space-y-12">
+                        <!-- B.Tech -->
+                        <div class="relative flex items-center">
+                            <div class="timeline-dot absolute left-4 md:left-1/2 md:-translate-x-1/2 z-10"></div>
+                            <div class="ml-20 md:ml-0 md:w-5/12 md:pr-12 md:text-right">
+                                <h3 class="text-xl font-bold gradient-text">Lovely Professional University</h3>
+                                <p class="text-purple-400 font-medium">B.Tech - Computer Science & Engineering</p>
+                                <p class="text-slate-400 dark:text-slate-600">CGPA: 6.93</p>
+                                <p class="text-sm text-slate-500">Aug 2023 – Present</p>
+                            </div>
+                            <div class="hidden md:block md:w-5/12 md:pl-12">
+                                <div class="glass-card p-6 rounded-2xl">
+                                    <p>Pursuing Bachelor's degree with focus on data science, machine learning, algorithms, and software development.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Intermediate -->
+                        <div class="relative flex items-center">
+                            <div class="timeline-dot absolute left-4 md:left-1/2 md:-translate-x-1/2 z-10"></div>
+                            <div class="hidden md:block md:w-5/12 md:pr-12 md:text-right">
+                                <div class="glass-card p-6 rounded-2xl">
+                                    <p>Completed intermediate education with Physics, Chemistry, and Mathematics, building strong analytical foundation.</p>
+                                </div>
+                            </div>
+                            <div class="ml-20 md:ml-0 md:w-5/12 md:pl-12">
+                                <h3 class="text-xl font-bold gradient-text">Indus Public School, Jind</h3>
+                                <p class="text-purple-400 font-medium">Intermediate (PCM)</p>
+                                <p class="text-slate-400 dark:text-slate-600">Percentage: 75%</p>
+                                <p class="text-sm text-slate-500">Mar 2021 – May 2022</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Matriculation -->
+                        <div class="relative flex items-center">
+                            <div class="timeline-dot absolute left-4 md:left-1/2 md:-translate-x-1/2 z-10"></div>
+                            <div class="ml-20 md:ml-0 md:w-5/12 md:pr-12 md:text-right">
+                                <h3 class="text-xl font-bold gradient-text">Indus Public School, Jind</h3>
+                                <p class="text-purple-400 font-medium">Matriculation</p>
+                                <p class="text-slate-400 dark:text-slate-600">Percentage: 85.0%</p>
+                                <p class="text-sm text-slate-500">Mar 2019 – May 2020</p>
+                            </div>
+                            <div class="hidden md:block md:w-5/12 md:pl-12">
+                                <div class="glass-card p-6 rounded-2xl">
+                                    <p>Completed foundational education with distinction, developing strong academic foundation and problem-solving skills.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="py-20 px-6 section-hidden">
+            <div class="max-w-7xl mx-auto">
+                <div class="glass-card rounded-2xl p-8 md:p-12">
+                    <div class="text-center mb-10">
+                        <h2 class="text-4xl font-bold mb-4 gradient-text">Resume</h2>
+                        <p class="text-lg text-slate-300 dark:text-slate-700 mb-8">
+                            Download my complete resume for detailed information about my education, skills, and projects.
+                        </p>
+                        
+                        <!-- Contact Bar -->
+                        <div class="flex flex-wrap justify-center gap-6 mb-10">
+                            <a href="mailto:soamparkash1@gmail.com" class="flex items-center gap-2 px-4 py-2 glass-card rounded-lg hover:gradient-border transition">
+                                <i class="fas fa-envelope text-purple-400"></i>
+                                <span>Email</span>
+                            </a>
+                            <a href="https://github.com/soamparkash" target="_blank" class="flex items-center gap-2 px-4 py-2 glass-card rounded-lg hover:gradient-border transition">
+                                <i class="fab fa-github text-purple-400"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="http://www.linkedin.com/in/soamparkash" target="_blank" class="flex items-center gap-2 px-4 py-2 glass-card rounded-lg hover:gradient-border transition">
+                                <i class="fab fa-linkedin text-purple-400"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                        
+                        <!-- Contact Info Display -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                            <div class="glass-card p-3 rounded-lg">
+                                <i class="fas fa-phone-alt text-purple-400 mr-2"></i>
+                                <span>+91 9991554242</span>
+                            </div>
+                            <div class="glass-card p-3 rounded-lg">
+                                <i class="fas fa-envelope text-purple-400 mr-2"></i>
+                                <span>soamparkash1@gmail.com</span>
+                            </div>
+                            <div class="glass-card p-3 rounded-lg">
+                                <i class="fab fa-linkedin text-purple-400 mr-2"></i>
+                                <span>/in/soamparkash</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Download Button -->
+                        <a
+                            href="#contact"
+                            class="inline-block px-8 py-3 bg-data-gradient rounded-lg font-bold text-lg ripple animate-pulse-glow"
+                        >
+                            <i class="fas fa-download mr-2"></i> Contact for Resume
+                        </a>
+                    </div>
+                    
+                    <!-- Resume Tabs -->
+                    <div class="mt-12">
+                        <div class="flex flex-wrap border-b border-slate-700 dark:border-slate-300 mb-8" id="resumeTabsContainer">
+                            <button class="tab-active px-6 py-3 font-medium" data-tab="education">Education</button>
+                            <button class="px-6 py-3 glass-card font-medium" data-tab="skills">Skills</button>
+                            <button class="px-6 py-3 glass-card font-medium" data-tab="projects">Projects</button>
+                            <button class="px-6 py-3 glass-card font-medium" data-tab="certifications">Certifications</button>
+                            <button class="px-6 py-3 glass-card font-medium" data-tab="training">Training</button>
+                        </div>
+                        
+                        <!-- Education Tab Content -->
+                        <div id="education-tab" class="resume-tab-content active space-y-6">
+                            <!-- LPU -->
+                            <div class="resume-item p-6 glass-card rounded-xl">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <h3 class="text-xl font-bold mb-2 gradient-text">B.Tech Computer Science</h3>
+                                        <p class="text-purple-400">Lovely Professional University</p>
+                                        <p class="text-slate-400">CGPA: 6.93 | Aug 2023 – Present</p>
+                                    </div>
+                                    <div class="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center">
+                                        <i class="fas fa-graduation-cap text-purple-400 text-2xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Intermediate -->
+                            <div class="resume-item p-6 glass-card rounded-xl">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <h3 class="text-xl font-bold mb-2 gradient-text">Intermediate (PCM)</h3>
+                                        <p class="text-purple-400">Indus Public School, Jind</p>
+                                        <p class="text-slate-400">Percentage: 75% | Mar 2021 – May 2022</p>
+                                    </div>
+                                    <div class="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center">
+                                        <i class="fas fa-school text-purple-400 text-2xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Matriculation -->
+                            <div class="resume-item p-6 glass-card rounded-xl">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <h3 class="text-xl font-bold mb-2 gradient-text">Matriculation</h3>
+                                        <p class="text-purple-400">Indus Public School, Jind</p>
+                                        <p class="text-slate-400">Percentage: 85.0% | Mar 2019 – May 2020</p>
+                                    </div>
+                                    <div class="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center">
+                                        <i class="fas fa-award text-purple-400 text-2xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Skills Tab Content -->
+                        <div id="skills-tab" class="resume-tab-content space-y-6">
+                            <div class="resume-item p-6 glass-card rounded-xl">
+                                <h3 class="text-xl font-bold mb-4 gradient-text">Technical Skills</h3>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div><span class="font-bold text-purple-400">Languages:</span> C++, C, Python, HTML, CSS</div>
+                                    <div><span class="font-bold text-purple-400">Tools:</span> Microsoft Excel, Power BI</div>
+                                    <div><span class="font-bold text-purple-400">Soft Skills:</span> Problem-Solving, Team Player, Adaptability</div>
+                                    <div><span class="font-bold text-purple-400">Data Science:</span> Pandas, NumPy, Scikit-learn, Matplotlib</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Projects Tab Content -->
+                        <div id="projects-tab" class="resume-tab-content space-y-6">
+                            <!-- 911 Call Analysis -->
+                            <div class="resume-item p-6 glass-card rounded-xl">
+                                <h3 class="text-xl font-bold mb-2 gradient-text">911 Emergency Call Analysis</h3>
+                                <p class="text-purple-400 mb-2">Python, Power BI, Data Visualization</p>
+                                <p class="text-slate-300">Cleaned and processed 911 call data, identified trends, built interactive Power BI dashboards.</p>
+                            </div>
+                            
+                            <!-- Traffic Crash -->
+                            <div class="resume-item p-6 glass-card rounded-xl">
+                                <h3 class="text-xl font-bold mb-2 gradient-text">Traffic Crash Analysis</h3>
+                                <p class="text-purple-400 mb-2">MS Excel, Pivot Tables, Data Analysis</p>
+                                <p class="text-slate-300">Analyzed 7 years of accident data, built interactive Excel dashboard for safety insights.</p>
+                            </div>
+                            
+                            <!-- TECH-BOT -->
+                            <div class="resume-item p-6 glass-card rounded-xl">
+                                <h3 class="text-xl font-bold mb-2 gradient-text">TECH-BOT</h3>
+                                <p class="text-purple-400 mb-2">Python, HTML, CSS, JavaScript</p>
+                                <p class="text-slate-300">Developed chatbot with Python logic integrated into web interface.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Certifications Tab Content -->
+                        <div id="certifications-tab" class="resume-tab-content space-y-6">
+                            <div class="resume-item p-6 glass-card rounded-xl">
+                                <h3 class="text-xl font-bold mb-2 gradient-text">NPTEL Social Networks</h3>
+                                <p class="text-slate-300">Completed certification in Social Networks analysis</p>
+                            </div>
+                            <div class="resume-item p-6 glass-card rounded-xl">
+                                <h3 class="text-xl font-bold mb-2 gradient-text">Data Analytics Job Simulation - Forage</h3>
+                                <p class="text-slate-300">Hands-on data analytics job simulation experience</p>
+                            </div>
+                            <div class="resume-item p-6 glass-card rounded-xl">
+                                <h3 class="text-xl font-bold mb-2 gradient-text">Master Generative AI - Udemy</h3>
+                                <p class="text-slate-300">Comprehensive course on Generative AI concepts</p>
+                            </div>
+                            <div class="resume-item p-6 glass-card rounded-xl">
+                                <h3 class="text-xl font-bold mb-2 gradient-text">Hardware and Operating Systems - Udemy</h3>
+                                <p class="text-slate-300">Introduction to hardware and OS fundamentals</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Training Tab Content -->
+                        <div id="training-tab" class="resume-tab-content space-y-6">
+                            <div class="resume-item p-6 glass-card rounded-xl">
+                                <h3 class="text-xl font-bold mb-2 gradient-text">Data to Decision - CPELPU</h3>
+                                <p class="text-purple-400 mb-2">Jun'25 – Jul'25</p>
+                                <ul class="list-disc list-inside text-slate-300 space-y-2">
+                                    <li>EDA using NumPy and Pandas (20% time reduction)</li>
+                                    <li>Feature engineering (25% performance boost)</li>
+                                    <li>ML models: Linear Regression, KNN, SVM, Decision Trees, K-Means</li>
+                                    <li>15% accuracy improvement in model performance</li>
+                                    <li>Experience with Excel, Power BI, MySQL</li>
+                                </ul>
+                                <a href="https://drive.google.com/file/d/18hqTi27NuChm4pDCL74PVeQWiX5-yMRJ/view" target="_blank" class="inline-block mt-4 text-purple-400 hover:text-purple-300">
+                                    View Certificate <i class="fas fa-external-link-alt ml-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 px-6 bg-slate-900/30 dark:bg-slate-100/30 section-hidden">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold mb-12 text-center">
+                    <span class="gradient-text">Get In Touch</span>
+                    <div class="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mt-2 rounded-full"></div>
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="glass-card p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold mb-6 gradient-text">Send a Message</h3>
+                        <form id="contactForm">
+                            <div class="space-y-6">
+                                <div>
+                                    <label class="block mb-2">Your Name</label>
+                                    <input type="text" class="w-full px-4 py-3 glass-card rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                
+                                <div>
+                                    <label class="block mb-2">Your Email</label>
+                                    <input type="email" class="w-full px-4 py-3 glass-card rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                
+                                <div>
+                                    <label class="block mb-2">Your Message</label>
+                                    <textarea rows="5" class="w-full px-4 py-3 glass-card rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+                                </div>
+                                
+                                <button type="submit" class="w-full px-6 py-3 bg-data-gradient rounded-lg font-bold text-lg ripple animate-pulse-glow">
+                                    <i class="fas fa-paper-plane mr-2"></i> Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Contact Information -->
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6 gradient-text">Contact Information</h3>
+                            <p class="text-slate-300 dark:text-slate-700 mb-8">
+                                Interested in data science opportunities, collaboration on projects, or discussing technology? Feel free to reach out!
+                            </p>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone-alt text-purple-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Phone</h4>
+                                    <a href="tel:+919991554242" class="text-purple-400 hover:text-purple-300">
+                                        +91 9991554242
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-purple-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Email</h4>
+                                    <a href="mailto:soamparkash1@gmail.com" class="text-purple-400 hover:text-purple-300">
+                                        soamparkash1@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                                    <i class="fab fa-github text-purple-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">GitHub</h4>
+                                    <a href="https://github.com/soamparkash" target="_blank" class="text-purple-400 hover:text-purple-300">
+                                        github.com/soamparkash
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                                    <i class="fab fa-linkedin text-purple-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">LinkedIn</h4>
+                                    <a href="http://www.linkedin.com/in/soamparkash" target="_blank" class="text-purple-400 hover:text-purple-300">
+                                        linkedin.com/in/soamparkash
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-card p-6 rounded-xl">
+                            <h4 class="font-bold text-lg mb-4">Looking For</h4>
+                            <p class="text-slate-300 dark:text-slate-700">
+                                Data Science Internships • Machine Learning Projects • Analytics Opportunities • Open Source Contributions
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 border-t border-slate-800 dark:border-slate-300">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="text-xl font-bold gradient-text mb-2 code-font">Soam Parkash</div>
+                    <p class="text-slate-400 dark:text-slate-600">Computer Science Engineering Student | Aspiring Data Science Engineer</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="mailto:soamparkash1@gmail.com" class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:bg-purple-500/20 transition">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://github.com/soamparkash" target="_blank" class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:bg-purple-500/20 transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="http://www.linkedin.com/in/soamparkash" target="_blank" class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:bg-purple-500/20 transition">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-slate-800 dark:border-slate-300 text-center text-slate-500">
+                <p>&copy; 2024 Soam Parkash. All rights reserved.</p>
+                <p class="mt-2 text-sm">Built with passion using modern web technologies</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

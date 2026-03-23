@@ -1,193 +1,384 @@
-// Project data based on your CV
-const projects = [
-  {
-    title: "🚨 911 Emergency Call Analysis",
-    description: "Cleaned and processed 911 emergency call data using Python, resolving missing/inconsistent values and identifying key trends by call type, location, time, and priority. Built interactive Power BI dashboards with maps, filters, and drill-down visuals, improving analysis efficiency and data-driven decision-making accuracy significantly.",
-    tech: ["Python", "Power BI", "EDA", "Data Visualization"],
-    githubLink: "https://github.com/soamparkash/911-call-analysis"
-  },
-  {
-    title: "🚗 Traffic Crash Analysis Dashboard",
-    description: "Analyzed 7 years of accident data to identify high-risk locations, peak timings, and key contributing factors, delivering actionable insights for safety planning. Built an interactive Excel dashboard using Pivot Tables, slicers, and charts, improving reporting efficiency and highlighting patterns related to over speeding, vehicle types, and road conditions.",
-    tech: ["MS Excel", "Pivot Tables", "Data Storytelling", "Dashboard Design"],
-    githubLink: "https://github.com/soamparkash/traffic-crash-analysis"
-  },
-  {
-    title: "🤖 TECH-BOT | Full-stack Chatbot",
-    description: "Designed and developed a functional chatbot with Python logic integrated into a clean, interactive web interface, demonstrating full-stack fundamentals and real-time response handling. Enhanced user experience and deployment readiness by organizing modular code on GitHub, improving maintainability and showcasing practical development skills.",
-    tech: ["Python", "HTML/CSS/JS", "Flask", "GitHub"],
-    githubLink: "https://github.com/soamparkash/tech-bot"
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.5;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Dark mode styles */
+body.dark {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+body.dark .card,
+body.dark .timeline-item,
+body.dark .cert-badge,
+body.dark .training-block {
+  background: #1e293b;
+  color: #e2e8f0;
+  border-color: #334155;
+}
+
+body.dark .skill-tag {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+body.dark .navbar {
+  background: rgba(30, 41, 59, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark .tech-badge {
+  background: #14b8a630;
+  color: #5eead4;
+}
+
+body.dark .card p {
+  color: #cbd5e1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #0f172a;
+  transition: 0.2s;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+body.dark .theme-toggle {
+  color: #facc15;
+}
+
+/* Hero Section */
+.hero {
+  padding: 3rem 0 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+.hero .highlight {
+  background: linear-gradient(120deg, #14b8a6, #0f766e);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: #475569;
+  margin-bottom: 1.5rem;
+}
+
+body.dark .tagline {
+  color: #94a3b8;
+}
+
+.social-links a {
+  color: #334155;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: 0.2s;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: #14b8a6;
+  transform: translateY(-3px);
+}
+
+.resume-btn {
+  background: #14b8a6;
+  color: white !important;
+  padding: 8px 20px;
+  border-radius: 40px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.resume-btn:hover {
+  background: #0f766e;
+  transform: translateY(-2px);
+}
+
+body.dark .social-links a {
+  color: #cbd5e1;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 2rem 0 1.5rem;
+  border-left: 5px solid #14b8a6;
+  padding-left: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.skill-tag {
+  background: #e2e8f0;
+  padding: 8px 18px;
+  border-radius: 40px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  cursor: default;
+}
+
+.skill-tag:hover {
+  background: #14b8a6;
+  color: white;
+  transform: scale(1.02);
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.8rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+  border: 1px solid #e2e8f0;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+  border-color: #14b8a680;
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.card .tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.tech-badge {
+  background: #14b8a610;
+  color: #0f766e;
+  padding: 4px 12px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.card p {
+  color: #334155;
+  margin: 12px 0;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  color: #14b8a6;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.card-link i {
+  font-size: 0.8rem;
+  transition: transform 0.2s;
+}
+
+.card-link:hover i {
+  transform: translateX(4px);
+}
+
+/* Training Block */
+.training-block {
+  background: #f1f5f9;
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  transition: 0.2s;
+}
+
+.training-block h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* Certifications */
+.certs-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 1rem;
+}
+
+.cert-badge {
+  background: white;
+  border-radius: 40px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 500;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.2s;
+  cursor: default;
+}
+
+.cert-badge:hover {
+  transform: translateY(-2px);
+  border-color: #14b8a6;
+}
+
+.cert-badge i {
+  color: #14b8a6;
+}
+
+/* Education Timeline */
+.timeline-item {
+  background: white;
+  border-left: 4px solid #14b8a6;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.2rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: 0.2s;
+}
+
+.timeline-item:hover {
+  transform: translateX(5px);
+}
+
+.timeline-item h4 {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.date {
+  color: #14b8a6;
+  font-weight: 500;
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+/* Footer */
+hr {
+  margin: 2rem 0;
+  border-color: #e2e8f0;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  color: #64748b;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-];
-
-// Certifications data
-const certifications = [
-  { name: "Social Networks", issuer: "NPTEL", icon: "fab fa-python", date: "Nov'25" },
-  { name: "Data Analytics Job Simulation", issuer: "Forage", icon: "fas fa-chart-line", date: "Sep'25" },
-  { name: "Master Generative AI", issuer: "Udemy", icon: "fas fa-robot", date: "Aug'25" },
-  { name: "Introduction to Hardware and Operating Systems", issuer: "Udemy", icon: "fas fa-microchip", date: "Sep'24" }
-];
-
-// Education data
-const education = [
-  {
-    degree: "Bachelor of Technology - Computer Science and Engineering",
-    institution: "Lovely Professional University, Punjab",
-    cgpa: "CGPA: 7.14",
-    period: "Aug'23 – Present",
-    location: "Phagwara, Punjab"
-  },
-  {
-    degree: "Intermediate (PCM)",
-    institution: "Indus Public School, Jind (Haryana)",
-    percentage: "Percentage: 75%",
-    period: "Mar'21 – May'22"
-  },
-  {
-    degree: "Matriculation",
-    institution: "Indus Public School, Jind",
-    percentage: "Percentage: 85%",
-    period: "Mar'19 – May'20"
-  }
-];
-
-// Function to load projects dynamically
-function loadProjects() {
-  const projectsGrid = document.getElementById('projectsGrid');
-  if (projectsGrid) {
-    projectsGrid.innerHTML = projects.map(project => `
-      <div class="card">
-        <h3>${project.title}</h3>
-        <p>${project.description}</p>
-        <div class="tech">
-          ${project.tech.map(tech => `<span class="tech-badge">${tech}</span>`).join('')}
-        </div>
-        <a href="${project.githubLink}" target="_blank" class="card-link">
-          View on GitHub <i class="fas fa-arrow-right"></i>
-        </a>
-      </div>
-    `).join('');
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-// Function to load certifications
-function loadCertifications() {
-  const certsGrid = document.getElementById('certsGrid');
-  if (certsGrid) {
-    certsGrid.innerHTML = certifications.map(cert => `
-      <div class="cert-badge">
-        <i class="${cert.icon}"></i>
-        ${cert.name} | ${cert.issuer}
-        <span style="font-size: 0.75rem; color: #14b8a6; margin-left: 6px;">${cert.date}</span>
-      </div>
-    `).join('');
+/* Responsive Design */
+@media (max-width: 700px) {
+  .hero h1 {
+    font-size: 2rem;
   }
-}
-
-// Function to load education
-function loadEducation() {
-  const educationGrid = document.getElementById('educationGrid');
-  if (educationGrid) {
-    educationGrid.innerHTML = education.map(edu => `
-      <div class="timeline-item">
-        <h4>${edu.institution}</h4>
-        <p>${edu.degree} | ${edu.cgpa || edu.percentage}</p>
-        <div class="date">${edu.period} ${edu.location ? '| ' + edu.location : ''}</div>
-      </div>
-    `).join('');
-  }
-}
-
-// Dark mode toggle functionality
-function initDarkMode() {
-  const toggleBtn = document.getElementById('themeToggle');
-  const currentTheme = localStorage.getItem('theme');
   
-  if (currentTheme === 'dark') {
-    document.body.classList.add('dark');
-    toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+  .section-title {
+    font-size: 1.5rem;
   }
   
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      if (document.body.classList.contains('dark')) {
-        localStorage.setItem('theme', 'dark');
-        toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
-      } else {
-        localStorage.setItem('theme', 'light');
-        toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
-      }
-    });
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .resume-btn {
+    padding: 6px 16px;
+    font-size: 0.85rem;
   }
 }
-
-// Resume download functionality
-function initResumeDownload() {
-  const resumeBtn = document.getElementById('resumeBtn');
-  if (resumeBtn) {
-    resumeBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      // Create a simple text resume or link to a PDF
-      alert('Resume download feature: You can add your actual resume PDF file to the repository and link it here.\n\nFor now, you can view your CV details on this portfolio.');
-      
-      // Alternative: You can add a PDF file to your repo and link it:
-      // window.open('resume.pdf', '_blank');
-    });
-  }
-}
-
-// Add smooth scrolling for anchor links
-function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const href = this.getAttribute('href');
-      if (href !== '#' && href !== '') {
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-    });
-  });
-}
-
-// Add animation on scroll
-function initScrollAnimation() {
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-  
-  document.querySelectorAll('.card, .timeline-item, .cert-badge').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(el);
-  });
-}
-
-// Initialize everything when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-  loadProjects();
-  loadCertifications();
-  loadEducation();
-  initDarkMode();
-  initResumeDownload();
-  initSmoothScroll();
-  initScrollAnimation();
-});
-
-// Optional: Add console log to confirm script loaded
-console.log('Portfolio script loaded successfully!');

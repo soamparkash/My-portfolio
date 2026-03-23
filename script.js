@@ -1,365 +1,384 @@
-// Theme Toggle Functionality
-const themeToggle = document.getElementById('themeToggle');
-const themeIcon = document.getElementById('themeIcon');
-
-// Check for saved theme or prefer-color-scheme
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-const savedTheme = localStorage.getItem('theme');
-
-// Initialize theme based on saved preference or system preference
-function initializeTheme() {
-    if (savedTheme === 'light' || (!savedTheme && !prefersDark)) {
-        setLightTheme();
-    } else {
-        setDarkTheme();
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-function setLightTheme() {
-    document.body.classList.remove('dark');
-    document.body.classList.add('light');
-    themeIcon.classList.remove('fa-moon');
-    themeIcon.classList.add('fa-sun');
-    themeIcon.style.color = '#fbbf24';
-    localStorage.setItem('theme', 'light');
-    
-    themeToggle.style.animation = 'themeSwitch 0.3s ease';
-    setTimeout(() => {
-        themeToggle.style.animation = '';
-    }, 300);
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.5;
+  transition: background 0.3s, color 0.3s;
 }
 
-function setDarkTheme() {
-    document.body.classList.remove('light');
-    document.body.classList.add('dark');
-    themeIcon.classList.remove('fa-sun');
-    themeIcon.classList.add('fa-moon');
-    themeIcon.style.color = '#ffffff';
-    localStorage.setItem('theme', 'dark');
-    
-    themeToggle.style.animation = 'themeSwitch 0.3s ease';
-    setTimeout(() => {
-        themeToggle.style.animation = '';
-    }, 300);
+/* Dark mode styles */
+body.dark {
+  background: #0f172a;
+  color: #e2e8f0;
 }
 
-// Initialize theme
-initializeTheme();
-
-// Theme toggle click handler
-themeToggle.addEventListener('click', () => {
-    if (document.body.classList.contains('dark')) {
-        setLightTheme();
-    } else {
-        setDarkTheme();
-    }
-});
-
-// Listen for system theme changes
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    if (!localStorage.getItem('theme')) {
-        if (e.matches) {
-            setDarkTheme();
-        } else {
-            setLightTheme();
-        }
-    }
-});
-
-// Mobile Menu Toggle
-const mobileMenu = document.getElementById('mobileMenu');
-const mobileNav = document.getElementById('mobileNav');
-
-mobileMenu.addEventListener('click', () => {
-    mobileNav.classList.toggle('hidden');
-});
-
-// Close mobile menu when clicking a link
-document.querySelectorAll('#mobileNav a').forEach(link => {
-    link.addEventListener('click', () => {
-        mobileNav.classList.add('hidden');
-    });
-});
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-            });
-            
-            // Update active nav link
-            document.querySelectorAll('nav a').forEach(link => {
-                link.classList.remove('nav-active');
-            });
-            this.classList.add('nav-active');
-            
-            // Close mobile menu if open
-            if (!mobileNav.classList.contains('hidden')) {
-                mobileNav.classList.add('hidden');
-            }
-        }
-    });
-});
-
-// Skill Filter Functionality
-const skillTabs = document.querySelectorAll('#skillTabs button');
-const skillCards = document.querySelectorAll('.skill-card');
-
-skillTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        // Update active tab
-        skillTabs.forEach(t => {
-            if (t === tab) {
-                t.classList.add('tab-active');
-                t.classList.remove('glass-card');
-            } else {
-                t.classList.remove('tab-active');
-                t.classList.add('glass-card');
-            }
-        });
-        
-        // Filter skills
-        const filter = tab.getAttribute('data-filter');
-        
-        skillCards.forEach(card => {
-            const category = card.getAttribute('data-category');
-            
-            if (filter === 'all' || category === filter) {
-                card.classList.remove('hidden');
-                // Add animation for appearing cards
-                card.style.animation = 'slideUp 0.5s ease-out';
-            } else {
-                card.classList.add('hidden');
-            }
-        });
-    });
-});
-
-// Resume Tabs Functionality
-const resumeTabs = document.querySelectorAll('#resumeTabsContainer button');
-const resumeTabContents = document.querySelectorAll('.resume-tab-content');
-
-resumeTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        // Update active tab
-        resumeTabs.forEach(t => {
-            if (t === tab) {
-                t.classList.add('tab-active');
-                t.classList.remove('glass-card');
-            } else {
-                t.classList.remove('tab-active');
-                t.classList.add('glass-card');
-            }
-        });
-        
-        // Show selected tab content
-        const tabId = tab.getAttribute('data-tab');
-        resumeTabContents.forEach(content => {
-            if (content.id === `${tabId}-tab`) {
-                content.classList.add('active');
-                content.style.animation = 'fadeIn 0.5s ease-in-out';
-            } else {
-                content.classList.remove('active');
-            }
-        });
-    });
-});
-
-// Contact form submission
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const button = this.querySelector('button[type="submit"]');
-        const originalText = button.innerHTML;
-        
-        button.innerHTML = '<i class="fas fa-check mr-2"></i> Message Sent!';
-        button.classList.remove('animate-pulse-glow');
-        button.classList.add('bg-gradient-to-r', 'from-green-500', 'to-teal-500');
-        
-        // Reset form
-        this.reset();
-        
-        // Reset button after 3 seconds
-        setTimeout(() => {
-            button.innerHTML = originalText;
-            button.classList.remove('bg-gradient-to-r', 'from-green-500', 'to-teal-500');
-            button.classList.add('animate-pulse-glow');
-        }, 3000);
-    });
+body.dark .card,
+body.dark .timeline-item,
+body.dark .cert-badge,
+body.dark .training-block {
+  background: #1e293b;
+  color: #e2e8f0;
+  border-color: #334155;
 }
 
-// Ripple effect for buttons
-document.querySelectorAll('.ripple').forEach(button => {
-    button.addEventListener('click', function(e) {
-        const ripple = document.createElement('span');
-        const rect = this.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        const x = e.clientX - rect.left - size / 2;
-        const y = e.clientY - rect.top - size / 2;
-        
-        ripple.style.cssText = `
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.6);
-            transform: scale(0);
-            animation: ripple 0.6s linear;
-            width: ${size}px;
-            height: ${size}px;
-            top: ${y}px;
-            left: ${x}px;
-            pointer-events: none;
-            z-index: 10;
-        `;
-        
-        this.style.position = 'relative';
-        this.appendChild(ripple);
-        
-        setTimeout(() => {
-            ripple.remove();
-        }, 600);
-    });
-});
-
-// Scroll animation for sections
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('section-visible');
-            entry.target.classList.remove('section-hidden');
-        }
-    });
-}, observerOptions);
-
-// Observe all sections
-document.querySelectorAll('section').forEach(section => {
-    observer.observe(section);
-});
-
-// Update active nav on scroll
-window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY + 100;
-    
-    document.querySelectorAll('section').forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        const sectionId = section.getAttribute('id');
-        
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            document.querySelectorAll('nav a').forEach(link => {
-                link.classList.remove('nav-active');
-                if (link.getAttribute('href') === `#${sectionId}`) {
-                    link.classList.add('nav-active');
-                }
-            });
-        }
-    });
-});
-
-// Initialize first section as visible
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('#home').classList.add('section-visible');
-    document.querySelector('#home').classList.remove('section-hidden');
-    
-    // Add animation classes to elements with animate-* classes
-    document.querySelectorAll('[class*="animate-"]').forEach(el => {
-        // The animation classes are already applied in the HTML
-        // This ensures they work properly
-    });
-});
-
-// Handle window resize for mobile menu
-window.addEventListener('resize', () => {
-    if (window.innerWidth >= 768) {
-        mobileNav.classList.add('hidden');
-    }
-});
-
-// Prevent default behavior for anchor links with empty href
-document.querySelectorAll('a[href="#"]').forEach(link => {
-    link.addEventListener('click', (e) => e.preventDefault());
-});
-
-// Add touch support for mobile devices
-if ('ontouchstart' in window) {
-    document.body.classList.add('touch-device');
+body.dark .skill-tag {
+  background: #334155;
+  color: #e2e8f0;
 }
 
-// Handle escape key to close mobile menu
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !mobileNav.classList.contains('hidden')) {
-        mobileNav.classList.add('hidden');
-    }
-});
-
-// Smooth scroll to top when clicking logo
-document.querySelector('a[href="#home"]').addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-// Add loading animation for images
-document.querySelectorAll('img').forEach(img => {
-    img.addEventListener('load', function() {
-        this.style.animation = 'fadeIn 0.5s ease-in-out';
-    });
-});
-
-// Form input focus effects
-document.querySelectorAll('input, textarea').forEach(input => {
-    input.addEventListener('focus', function() {
-        this.parentElement.classList.add('focused');
-    });
-    
-    input.addEventListener('blur', function() {
-        this.parentElement.classList.remove('focused');
-    });
-});
-
-// Add hover effect for skill cards on touch devices
-if ('ontouchstart' in window) {
-    document.querySelectorAll('.skill-card').forEach(card => {
-        card.addEventListener('touchstart', function() {
-            this.classList.add('hover');
-        });
-        
-        card.addEventListener('touchend', function() {
-            this.classList.remove('hover');
-        });
-    });
+body.dark .navbar {
+  background: rgba(30, 41, 59, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-// Initialize tooltips if needed
-function initTooltips() {
-    // Add tooltip functionality here if needed
+body.dark .tech-badge {
+  background: #14b8a630;
+  color: #5eead4;
 }
 
-// Call initialization functions
-initTooltips();
+body.dark .card p {
+  color: #cbd5e1;
+}
 
-// Export functions if using modules
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-        setLightTheme,
-        setDarkTheme,
-        initializeTheme
-    };
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #0f172a;
+  transition: 0.2s;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+body.dark .theme-toggle {
+  color: #facc15;
+}
+
+/* Hero Section */
+.hero {
+  padding: 3rem 0 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+.hero .highlight {
+  background: linear-gradient(120deg, #14b8a6, #0f766e);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: #475569;
+  margin-bottom: 1.5rem;
+}
+
+body.dark .tagline {
+  color: #94a3b8;
+}
+
+.social-links a {
+  color: #334155;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: 0.2s;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: #14b8a6;
+  transform: translateY(-3px);
+}
+
+.resume-btn {
+  background: #14b8a6;
+  color: white !important;
+  padding: 8px 20px;
+  border-radius: 40px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.resume-btn:hover {
+  background: #0f766e;
+  transform: translateY(-2px);
+}
+
+body.dark .social-links a {
+  color: #cbd5e1;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 2rem 0 1.5rem;
+  border-left: 5px solid #14b8a6;
+  padding-left: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.skill-tag {
+  background: #e2e8f0;
+  padding: 8px 18px;
+  border-radius: 40px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  cursor: default;
+}
+
+.skill-tag:hover {
+  background: #14b8a6;
+  color: white;
+  transform: scale(1.02);
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.8rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+  border: 1px solid #e2e8f0;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+  border-color: #14b8a680;
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.card .tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.tech-badge {
+  background: #14b8a610;
+  color: #0f766e;
+  padding: 4px 12px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.card p {
+  color: #334155;
+  margin: 12px 0;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  color: #14b8a6;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.card-link i {
+  font-size: 0.8rem;
+  transition: transform 0.2s;
+}
+
+.card-link:hover i {
+  transform: translateX(4px);
+}
+
+/* Training Block */
+.training-block {
+  background: #f1f5f9;
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  transition: 0.2s;
+}
+
+.training-block h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* Certifications */
+.certs-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 1rem;
+}
+
+.cert-badge {
+  background: white;
+  border-radius: 40px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 500;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.2s;
+  cursor: default;
+}
+
+.cert-badge:hover {
+  transform: translateY(-2px);
+  border-color: #14b8a6;
+}
+
+.cert-badge i {
+  color: #14b8a6;
+}
+
+/* Education Timeline */
+.timeline-item {
+  background: white;
+  border-left: 4px solid #14b8a6;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.2rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: 0.2s;
+}
+
+.timeline-item:hover {
+  transform: translateX(5px);
+}
+
+.timeline-item h4 {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.date {
+  color: #14b8a6;
+  font-weight: 500;
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+/* Footer */
+hr {
+  margin: 2rem 0;
+  border-color: #e2e8f0;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  color: #64748b;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .resume-btn {
+    padding: 6px 16px;
+    font-size: 0.85rem;
+  }
 }
